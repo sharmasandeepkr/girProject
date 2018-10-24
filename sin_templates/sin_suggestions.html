@@ -1,0 +1,40 @@
+{{ define "sin_suggestions" }}
+<div class="row suggestionOrNot">
+    <div class="col ">
+            <center>
+                            
+                        <h6  style="text-align:left;margin-top:-3px;font-size: 15px;cursor: pointer;" onclick="toggleSuggestions()"><span id="txtSuggest" class="badge badge-danger">Suggested Services For<mark> Gaushala </mark></span>
+                            <img id="suggestionButton" src="./static/down.png" style="max-width:30px;max-height:30px;position: center"  >
+                        </h6>
+
+            </center>
+    </div>
+</div>
+
+
+{{ range $ServiceName, $Row := .Suggestions.RowMap }}
+<div class="row suggestionRowClass"  >
+        <div class="col col-suggestions  " >
+                        <div class="border rounded border-info" style="margin-top:12px;background-color: white;">
+                                        <div class="thumbnail " >
+                                                        <h6 href=" {{ $Row.DetailsLink }} " style="margin-top:0px;">
+                                                                <span class="badge badge-info"><span id=" {{ $Row.ID }} "   onclick="(function() {alert('hello')})()" style="cursor: pointer;">Register</span> <mark onclick="(function(){alert('not me')})()" style="cursor:pointer">Details</mark></span>
+                                                                
+
+                                                                
+                                                        </h6>
+                                                        <h6>
+                                                                <Img src=" {{ $Row.Img }}  " style="max-height: 90px;max-width:190px;">
+                                                                <span class="badge badge-info" > {{ $ServiceName }} </span>
+
+                                                        </h6>
+                                         </div>
+                                 
+                        </div>
+        </div>
+</div>
+
+{{ end }}
+</div>
+
+{{ end }}

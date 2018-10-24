@@ -1,0 +1,51 @@
+{{define "sin_farmLargeDevices"}}
+<div class="col  d-none d-sm-block   Users_and_services " style="margin-top:21px;" >
+    <div  class="fixedMyFarm scrollmenu" id="fixedMyFarm" style="position:fixed;"  >
+           
+                <h4  style="text-align:right">
+                                <span class="badge badge-rounded" style="background-color:#93b80e;font-size: 15px;margin-bottom: -60px;" > {{ .Ucred.GivenName }}'s <mark> <i>i </i>-Farms</mark> </span>
+                </h4>
+           
+           <div class="col " style="margin-top:-9px;">
+             <div class="row border rounded border-success" style="padding-bottom:12px;" >
+                           
+                        {{ range $Farm, $FarmStatus := .FarmLargeDevices.Farms }}
+                        <div class="col "  >
+                                <div class="border rounded border-info" style="margin-top:12px; background-color: white;">
+                                                <h6 style="text-align:center;font-size: 21px;"><span class="badge badge-info">{{ $Farm }}</span></h6>
+
+                                        <div class="thumbnail " style="margin-top:21px;">
+                                                <img src= "{{ $FarmStatus.Image }}" style="max-width:90px;max-height:90px;position: relative;overflow: hidden;">
+                                        </div>
+                                        <caption>
+                                        <h6 style="text-align:center"><span class="badge badge-danger">{{ $FarmStatus.Text }}</span></h6>
+                                        <h6 style="text-align:center"><img src=" {{ $FarmStatus.LiveSymbol }} " style="max-width:21px;max-height:21px;"><span class=" {{ $FarmStatus.Badge }} " style="text-align:center;"> {{if  $FarmStatus.Live }} Live {{ else }} Not Live  {{ end }} </span></h6>
+                                        </caption> 
+                                </div>
+                                        
+                        </div>
+                        {{end}}
+                       
+             </div>
+             <div class="row  d-none d-sm-block" style="margin-top:18px;">
+                     <h6 style="text-align:right;"><span class="badge rounded badge-info" style="font-size:12px;">Gir-Goras <mark> &#169; Advertisement</mark></span></h6>
+                   <div class="border rounded border-info" style="margin-top:-9px;background-image: url(./../static/cow123.png);background-size: 280px, 300px; padding-bottom:120px;background-color: white">
+                           <caption>
+                                        <h6 style="text-align:center;margin-top:9px;"><span class="badge badge-rounded " style="background-color:#53b148;color: white"><mark>{{ .FarmLargeDevices.Adv.Heading }}</mark></span></h6>
+                           </caption>
+                           <!-- <div class="thumbnail " style="margin-top:21px;"> -->
+                                   <!-- <img  src= "{{ .FarmLargeDevices.Adv.ImgURL }}"  style="max-width:210px;max-height:120px;margin-left:0px;"> -->
+                                   <!-- <h6  style="text-align:center;"><span class="badge badge-alert">Advertisement: Gir-Goras &#169; 2018</span></h6> -->
+
+                           <!-- </div> -->
+                                       
+                   </div>
+                   <h6 style="text-align:center;margin-left: 21px; margin-top: 12px;"><a href="#" style="font-size:12px;"><span class="badge badge-info" >Privacy</span></a><span class="dot"> . </span><a href="#" style="font-size:12px;">  <span class="badge badge-info" >Terms</span></a><span> . </span><a href="#" style="font-size:12px;">  <span class="badge badge-info" >About Us</span></a><span> . </span><a href="#" style="font-size:12px;"><span class="badge badge-danger">Gir-Goras &#169; 2018 </span></a></h6>   
+                                                
+             </div>
+           </div>
+                           
+    </div>         
+</div>
+
+{{end}}
